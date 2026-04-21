@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./logo-ai.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <title>ClassifyMe</title>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Manrope:wght@400;500;600&family=Lexend:wght@400;500;600&display=swap" as="style" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Manrope:wght@400;500;600&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/index-Cd0Qsjyp.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/chunk-DdW9qYNA.js">
+    <link rel="modulepreload" crossorigin href="./assets/classicClassifiers-C02OldrI.js">
+    <link rel="modulepreload" crossorigin href="./assets/vision_bundle-DWSq_4yO.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-CagxEaKS.css">
+  </head>
+  <body>
+    <div id="splash" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#1ABC9C;flex-direction:column;gap:20px;">
+      <div class="logo-wrap">
+        <img src="./logo-splash.svg" alt="ClassifyMe" style="width:min(460px,76vw);height:auto;display:block;" />
+      </div>
+      <style>
+        @keyframes splash-logo-enter {
+          0%   { opacity: 0; transform: translateY(10px) scale(.97); }
+          100% { opacity: 1; transform: translateY(0)   scale(1); }
+        }
+        @keyframes splash-logo-breathe {
+          0%, 100% { transform: scale(1);    opacity: 1; }
+          50%      { transform: scale(1.025); opacity: .88; }
+        }
+        #splash .logo-wrap {
+          transform-origin: center;
+          animation:
+            splash-logo-enter   .55s ease-out both,
+            splash-logo-breathe 2.2s ease-in-out .55s infinite;
+        }
+        #splash.splash-fade-out { opacity: 0; transition: opacity .4s ease-out; }
+      </style>
+    </div>
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+        var s = document.getElementById('splash');
+        s.style.background = '#106F57';
+      }
+      (function () {
+        var supported = ['en', 'ko'];
+        var stored = localStorage.getItem('locale');
+        var browser = (navigator.language || 'en').split('-')[0];
+        var lang = supported.indexOf(stored) >= 0 ? stored
+          : supported.indexOf(browser) >= 0 ? browser : 'en';
+        document.documentElement.lang = lang;
+      })();
+    </script>
+    <div id="root"></div>
+  </body>
+</html>
